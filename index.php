@@ -152,6 +152,16 @@
       </div>
       <div class="row" style="color: #6c757d">
         <div class="col-md-4 col-sm-6 portfolio-item">
+          <a class="portfolio-link" data-img="0">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <div class="img-container"></div>
+          </a>
+        </div>
+        <div class="col-md-4 col-sm-6 portfolio-item">
           <a class="portfolio-link" data-img="1">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
@@ -170,8 +180,8 @@
             </div>
             <div class="img-container"></div>
           </a>
-        </div>
-        <div class="col-md-4 col-sm-6 portfolio-item">
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
           <a class="portfolio-link" data-img="3">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
@@ -180,8 +190,8 @@
             </div>
             <div class="img-container"></div>
           </a>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
+        </div>
+        <div class="col-md-4 col-sm-6 portfolio-item">
           <a class="portfolio-link" data-img="4">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
@@ -193,16 +203,6 @@
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
           <a class="portfolio-link" data-img="5">
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fa fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <div class="img-container"></div>
-          </a>
-        </div>
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-img="6">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fa fa-plus fa-3x"></i>
@@ -349,9 +349,6 @@
   <script src="js/agency.js"></script>
 
   <script>
-    $(function(){
-
-    });
     var contentString = {
         est: '<div><h5>Asume Astangu Rimis</h5><p>Aadress: Astangu 2a</p><img src="img/map/rimi2.jpg" style="height: 71px;"><img src="img/portfolio/barbershop_thumb_5.jpg" style="height: 71px; margin-left: 10px;"></div>',
         rus: '<div><h6>Мы находимся в Астангу Рими</h6><p>Адрес: Astangu 2a</p><img src="img/map/rimi2.jpg" style="height: 71px;"><img src="img/portfolio/barbershop_thumb_5.jpg" style="height: 71px; margin-left: 10px;"></div>'
@@ -367,12 +364,33 @@
     }
 
     //setup gallery
+    var curImg = 0;
+    function changePic(direction) {
+      switch(direction){
+        case 'next':
+          curImg++;
+          break;
+        case 'prev':
+          curImg--;
+          break;
+      }
+      curImg = curImg >= portfolioImgs.web.length ? 0 : curImg;
+      curImg = curImg < 0 ? portfolioImgs.web.length - 1 : curImg;
+      $('.webImg').css("background-image", "url(img/portfolio/" + portfolioImgs.web[curImg] + ")")
+    }
     $('.closeIcon').click(function() {
       $('.imgModal').hide();
     });
+    $('.rightArrow').click(function() {
+      changePic('next');
+    });
+    $('.leftArrow').click(function() {
+      changePic('prev');
+    });
     $('.portfolio-link').click(function() {
       var imgNr = parseInt($(this).attr('data-img'));
-      $('.webImg').css("background-image", "url(img/portfolio/" + portfolioImgs.web[imgNr] + ")")
+      $('.webImg').css("background-image", "url(img/portfolio/" + portfolioImgs.web[imgNr] + ")");
+      curImg = imgNr;
       $('.imgModal').show();
     });
     var marker;
@@ -439,7 +457,7 @@
             "text-21": "Стрижка бороды - 3€",
             "text-22": "Формирование бороды машинкой и ножницами",
             "text-23": "Помывка головы - 2€",
-            "text-24": "Релаксирующая помывка головы с шампунью",
+            "text-24": "Релаксирующая помывка головы с шампунем",
             "text-25": "Фотогалерея",
             "text-26": "Наш персонал",
             "text-27": "Нелла Сбитнева",
