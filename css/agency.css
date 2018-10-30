@@ -40,7 +40,7 @@ section h2.section-heading {
 }
 
 section h3.section-subheading {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   font-style: italic;
   margin-bottom: 75px;
@@ -171,7 +171,7 @@ img::-moz-selection {
   }
 }
 
-header.masthead {
+.masthead {
   text-align: center;
   color: white;
   background-image: url("../img/main.jpg");
@@ -184,12 +184,12 @@ header.masthead {
   background-size: cover;
 }
 
-header.masthead .intro-text {
+.masthead .intro-text {
   padding-top: 150px;
   padding-bottom: 100px;
 }
 
-header.masthead .intro-text .intro-lead-in {
+.masthead .intro-text .intro-lead-in {
   font-size: 22px;
   font-style: italic;
   line-height: 22px;
@@ -197,7 +197,7 @@ header.masthead .intro-text .intro-lead-in {
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-header.masthead .intro-text .intro-heading {
+.masthead .intro-text .intro-heading {
   font-size: 50px;
   font-weight: 700;
   line-height: 50px;
@@ -206,18 +206,18 @@ header.masthead .intro-text .intro-heading {
 }
 
 @media (min-width: 768px) {
-  header.masthead .intro-text {
+  .masthead .intro-text {
     padding-top: 300px;
     padding-bottom: 200px;
   }
-  header.masthead .intro-text .intro-lead-in {
+  .masthead .intro-text .intro-lead-in {
     font-size: 40px;
     font-style: italic;
     line-height: 40px;
     margin-bottom: 25px;
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
-  header.masthead .intro-text .intro-heading {
+  .masthead .intro-text .intro-heading {
     font-size: 75px;
     font-weight: 700;
     line-height: 75px;
