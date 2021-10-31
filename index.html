@@ -8,10 +8,13 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="copyrighted-site-verification" content="ddef625ce95bf08d" />
-  <title>Meeste juuksur / barbershop Tallinnas. Astangu juuksur</title>
+  <title>Meeste juuksur / barbershop Tallinnas. Rocca juuksur | roccajuuksur.ee</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href='vendor/jquery/jquery-ui.min.css' rel='stylesheet' type='text/css'>
+  <link href='vendor/jquery/jquery-ui.structure.min.css' rel='stylesheet' type='text/css'>
+  <link href='vendor/jquery/jquery-ui.theme.min.css' rel='stylesheet' type='text/css'>
 
   <!-- Custom fonts for this template -->
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -22,15 +25,44 @@
 
   <!-- Custom styles for this template -->
   <link href="css/agency.css" rel="stylesheet">
-
+  <style>
+    .section-heading.text-uppercase {
+      color: #E4B756;
+    }
+    .white {
+      color: #fff !important;
+    }
+    body {
+      color: #fff;
+    }
+    .text-muted {
+      color: #b3b3b3 !important;
+    }
+    #services {
+      background-color: black;
+    }
+    footer {
+      background-color: black;
+    }
+    #timeSelection label, #clientDetails label {
+      color: black;
+      margin-top: 5px;
+    }
+    .numberPrefix {
+      color: black;
+    }
+    #selectable .ui-selecting { background: #FECA40; }
+    #selectable .ui-selected { background: #F39814; color: white; }
+    #selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+    #selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+  </style>
 </head>
 
 <body id="page-top">
-
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink" id="mainNav">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink" id="mainNav" style="background-color: black; margin: 0; padding-top: 0; padding-bottom: 0;">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top"><span class="">Astangu juuksur</span></a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"><div class="logo" style='background-image: url("img/logos/roccajuuksuree.png"); background-size: contain; background-repeat: no-repeat; float: left; height: 80px; width: 100px;'></div></a>
       <div class="mobile-nav-container">
         <ul class='lang-menu-mobile'>
           <li class="est bold-text" ><a href="/">EST</a></li>
@@ -48,7 +80,7 @@
             <a class="nav-link js-scroll-trigger" href="#team"><span class="">Meist</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio"><span class="">Fotogalerii</span></a>
+            <a class="nav-link js-scroll-trigger" href="#book"><span class="">Reserveeri</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#services"><span class="">Hinnakiri</span></a>
@@ -73,15 +105,15 @@
     <div class="container">
       <div class="intro-text">
         <div class="intro-lead-in"><span class="">Tere tulemast meie barbershopi</span></div>
-        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">
-          <span class="">Tutvu meie teenustega</span>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#book">
+          <span class="">Reserveeri aeg</span>
         </a>
       </div>
     </div>
   </header>
 
   <!-- Team -->
-  <section class="bg-light" id="team">
+  <section id="team" style="background-color: black;">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -94,7 +126,6 @@
             <div class="team-member" style="max-width: 330px;">
               <h3 class="section-subheading" style="margin-bottom:45px;">Meie barbershop on mõeldud just meestele. Me pakume kõik meeste hoolitsusteenused, ning alati anname nõu sobiva soengu valikul.</h3>
               <h3 class="section-subheading" style="margin-bottom:45px;">Me alati hindame Teie aega seega püüame teenindada kiiresti, samas kvaliteetselt.</h3>
-              <h3 class="section-subheading">Me töötame ilma reserveerimiseta (elav järjekord)</h3>
               <p class="text-muted"></p>
             </div>
           </div>
@@ -114,7 +145,7 @@
     </section>
 
   <!-- Portfolio Grid -->
-  <section id="portfolio" style="background:#84c7c0; color: white">
+  <!-- <section id="portfolio">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
@@ -185,6 +216,28 @@
         </div>
       </div>
     </div>
+  </section> -->
+
+  <!-- Portfolio Grid -->
+  <section id="book">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase"><span class="">Reserveeri aeg</span></h2>
+        </div>
+      </div>
+      <div style="max-width: 700px; margin: auto;">
+        <div class="row" style="color: #a9bccc">
+          <div class="col-md-6 col-sm-12 portfolio-item">
+            <div id="datepicker"></div>
+          </div>
+          <div class="col-md-6 col-sm-12 portfolio-item">
+            <div id="timeSelection"></div>
+            <div id="clientDetails"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
 <!-- Services -->
@@ -227,7 +280,7 @@
             <i class="fa fa-circle fa-stack-2x text-primary"></i>
             <div class="icon-container" style="background-image: url(img/icons/beard.png);"></div>
           </span>
-          <h4 class="service-heading"><span class="">Habeme ajamine - 5€</span></h4>
+          <h4 class="service-heading"><span class="">Habeme ajamine - 7€</span></h4>
           <p class="text-muted"><span class="">Habeme kujundamine masinaga koos kääridega</span></p>
         </div>
         <div class="col-md-4">
@@ -243,7 +296,7 @@
   </section>
 
   <!-- About -->
-  <section id="about" style="background:#199a8d">
+  <section id="about">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center" style="color: white">
@@ -251,7 +304,6 @@
           <h4 class="section-heading text-uppercase"><span class="">Seoses eriolukorraga riigis oleme ajutiselt suletud</span></h4>
           <br> -->
           <h2 class="section-heading text-uppercase"><span class="">Oleme avatud</h2>
-          <h4 class="section-heading text-uppercase"><span class="">14.09 - 15:00 - 19:00</span></h4>
           <h4 class="section-heading text-uppercase"><span class="">E Suletud</span></h4>
           <h4 class="section-heading text-uppercase"><span class="">T 10:00 - 19:00</span></h4>
           <h4 class="section-heading text-uppercase"><span class="">K 10:00 - 19:00</span></h4>
@@ -262,7 +314,7 @@
           <h4 class="section-heading text-uppercase"><span class="">14:00 - 15:00 Lõuna</span></h4>
           <br>
           <h4>tel. +372 55529783</h4>
-          <h4>email: sbitneva.nella@gmail.com</h4>
+          <h4>email: roccajuuksur@gmail.com</h4>
         </div>
       </div>
     </div>
@@ -287,23 +339,22 @@
       </div>
     </div>
   </div>
-
   <!-- Footer -->
   <footer>
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <span class="copyright">Copyright &copy; Astangu juuksur 2020</span>
+          <span class="copyright">Copyright &copy; Rocca juuksur 2021</span>
         </div>
         <div class="col-md-4">
           <ul class="list-inline social-buttons">
             <li class="list-inline-item">
-              <a href="http://astangu-juuksur.business.site/">
+              <a href="http://astangu-juuksur.business.site/" style="background-color: #E4B756;">
                 <i class="fa fa-google-plus-circle"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://www.facebook.com/nella.sbitneva">
+              <a href="https://www.facebook.com/nella.sbitneva" style="background-color: #E4B756;">
                 <i class="fa fa-facebook"></i>
               </a>
             </li>
@@ -320,6 +371,8 @@
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/jquery/jquery-ui.min.js"></script>
+  <script src="vendor/jquery/datepicker-et.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
@@ -332,6 +385,57 @@
   <!-- Custom scripts for this template -->
   <script src="js/agency.js"></script>
 
+  <!-- Script -->
+  <script type='text/javascript' >
+    window.selectedDate = null;
+    window.selectedTime = null;
+    function selectTime() {
+      window.selectedTime = $('#time').val();
+      if (window.selectedDate && window.selectedTime) {
+        $('#clientDetails').html(`
+        <form action="https://roccajuuksur.ee/api/time/book">
+          <label for="email">Email:</label><br>
+          <input required type="email" name="email" id="email"/><br>
+          <label for="phone">Tel. number:</label><br>
+          <span class="numberPrefix">+372</span> <input required type="text" name="phone" id="phone" pattern="^\\d{5,}$"/><br>
+          <input type="hidden" value="et" name="lang" id="lang">
+          <input type="hidden" value="${window.selectedDate}" name="date" id="date">
+          <input type="hidden" value="${window.selectedTime}" name="time" id="time">
+          <input class="btn btn-primary" style="margin-top: 7px;" type="submit" value="Reserveeri">
+        </form>
+      `);
+      } else {
+        $('#clientDetails').html('');
+      }
+    }
+    $( function() {
+      $.get( "https://roccajuuksur.ee/api/dates", function( allowedDates ) {
+        $('#datepicker').datepicker({
+          dateFormat: "yy-mm-dd",
+          beforeShowDay: function(date){
+              var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+              return [ allowedDates.includes(string) ];
+          },
+          onSelect: function (date, datepicker) {
+            $.get( `https://roccajuuksur.ee/api/time/${date}`, function( times ) {
+              if (times && times.length) {
+                window.selectedDate = date;
+                $('#timeSelection').html(`
+                  <label for="time">Vali sobiv aeg</label><br>
+                  <select name="time" id="time" onchange="selectTime()">
+                    <option values=""></option>
+                    ${times.map(time => `<option values="${time.time}">${time.time}</option>\n`)}
+                  </select>
+                `)
+              } else {
+                $('#timeSelection').html("");
+              }
+            });
+          },
+        });
+      });
+    });
+  </script>
   <script>
     var contentString = {
         est: '<div><h5>Asume Astangu Rimis</h5><p>Aadress: Astangu 2a</p><img src="img/map/rimi2.jpg" style="height: 71px;"><img src="img/portfolio/barbershop_thumb_5.jpg" style="height: 71px; margin-left: 10px;"></div>',
@@ -480,7 +584,7 @@
       infowindow.open(map, marker2);
     }
     function initMap() {
-      var center = { lat: 59.405204, lng: 24.615778 };
+      var center = { lat: 59.421562, lng: 24.647764 };
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 14,
         center: center,
