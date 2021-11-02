@@ -423,8 +423,8 @@
                 $('#timeSelection').html(`
                   <label for="time">Vali sobiv aeg</label><br>
                   <select name="time" id="time" onchange="selectTime()">
-                    <option values=""></option>
-                    ${times.map(time => `<option values="${time.time}">${time.time}</option>\n`)}
+                    <option value=""></option>
+                    ${times.map(time => `<option value="${time.time}">${time.time}</option>\n`)}
                   </select>
                 `)
               } else {
