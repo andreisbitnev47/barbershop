@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="<%= t.langCode %>">
+
+<head>
+<%- include('../partials/head') %>
+</head>
+
+<body id="page-top">
+<%- include('../partials/nav') %>
+
+<header class="masthead">
+  <div class="container">
+    <div class="intro-text">
+      <% if (t.header.welcome) { %><div class="intro-lead-in"><span class=""><%= t.header.welcome %></span></div><% } %>
+      <h1 class="intro-lead-in"><span class=""><%= t.header.headline %></span></h1>
+      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#book">
+        <span class=""><%= t.header.btn %></span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<section id="team" style="background-color: black;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase"><span class=""><%= t.about.title %></span></h2>
+        <h3 class="section-subheading text-muted"><%= t.about.subtitle %></h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6" style="display: flex; justify-content: center; align-items: center;">
+        <div class="team-member" style="max-width: 330px;">
+          <h3 class="section-subheading" style="margin-bottom:45px;"><%= t.about.p1 %></h3>
+          <h3 class="section-subheading" style="margin-bottom:45px;"><%= t.about.p2 %></h3>
+          <p class="text-muted"></p>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="team-member">
+          <img class="mx-auto rounded-circle" src="<%= baseDir %>img/portfolio/barber4.gif" alt="Juuksur Nella Sbitneva" loading="lazy">
+          <h4><span class="">Nella Sbitneva</span></h4>
+          <p class="text-muted"><span class=""><%= t.about.role %></span></p>
+          <p class="large text-muted"><span class=""><%= t.about.desc %></span></p>
+          <p>tel. +372 55529783</p>
+          <p>email: sbitneva.nella@gmail.com</p>
+          <p>NELLA SBITNEVA FIE (12959104)</p>
+          <p><%= t.about.bank %> EE982200001100893527</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase"><span class=""><%= t.book.title %></span></h2>
+      </div>
+    </div>
+    <div style="max-width: 700px; margin: auto;">
+      <div class="row" style="color: #a9bccc">
+        <div class="col-md-6 col-sm-12 portfolio-item">
+          <div id="datepicker"></div>
+        </div>
+        <div class="col-md-6 col-sm-12 portfolio-item">
+          <div id="timeSelection"></div>
+          <div id="clientDetails"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase"><span class=""><%= t.services.title %></span></h2>
+        <h3 class="section-subheading text-muted"><span class=""><%= t.services.subtitle %></span></h3>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x">
+          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+          <div class="icon-container" style="background-image: url(<%= baseDir %>img/icons/machine.png);"></div>
+        </span>
+        <h4 class="service-heading"><span class=""><%= t.services.clipper.name %> - 25€</span></h4>
+        <p class="text-muted"><span class=""><%= t.services.clipper.desc %></span></p>
+      </div>
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x">
+          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+          <div class="icon-container" style="background-image: url(<%= baseDir %>img/icons/machine2.png);"></div>
+        </span>
+        <!-- Updated to link to dedicated landing page -->
+        <h4 class="service-heading"><span class=""><a href="<%= baseDir %><%= t.links.scissor %>" style="color: inherit; text-decoration: underline;"><%= t.services.scissor.name %> - 28€</a></span></h4>
+        <p class="text-muted"><span class=""><%= t.services.scissor.desc %></span></p>
+      </div>
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x">
+          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+          <div class="icon-container" style="background-image: url(<%= baseDir %>img/icons/zero.png);"></div>
+        </span>
+        <h4 class="service-heading"><span class=""><%= t.services.buzz.name %> - 20€</span></h4>
+        <p class="text-muted"><span class=""><%= t.services.buzz.desc %></span></p>
+      </div>
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x">
+          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+          <div class="icon-container" style="background-image: url(<%= baseDir %>img/icons/beard.png);"></div>
+        </span>
+        <!-- Updated to link to dedicated landing page -->
+        <h4 class="service-heading"><span class=""><a href="<%= baseDir %><%= t.links.beard %>" style="color: inherit; text-decoration: underline;"><%= t.services.beard.name %> - 18€</a></span></h4>
+        <p class="text-muted"><span class=""><%= t.services.beard.desc %></span><br><span class="red"><%= t.services.beard.warn %></span></p>
+      </div>
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x">
+          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+          <div class="icon-container" style="background-image: url(<%= baseDir %>img/icons/wash.png);"></div>
+        </span>
+        <h4 class="service-heading"><span class=""><%= t.services.wash.name %> - 2€</span></h4>
+        <p class="text-muted"><span class=""><%= t.services.wash.desc %></span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center" style="color: white">
+        <br>
+        <h4 class="section-heading text-uppercase"><span class=""><%= t.hours.closedMsg %></span></h4>
+        <br>
+        <h2 class="section-heading text-uppercase"><span class=""><%= t.hours.title %></h2>
+        <% t.hours.days.forEach(function(day) { %>
+          <h4 class="section-heading text-uppercase"><span class=""><%= day %></span></h4>
+        <% }) %>
+        <h4 class="section-heading text-uppercase"><span class=""><%= t.hours.lunch %></span></h4>
+        <br>
+        <h4 style="color: #E4B756">tel. +372 55529783</h4>
+        <h4 style="color: #E4B756">email: roccajuuksur@gmail.com</h4>
+        <br>
+        <p class="text-muted" style="max-width: 600px; margin: 0 auto; margin-bottom: 20px;">
+          <%= t.hours.locationDesc %>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background-color: black;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase"><span class=""><%= t.faq.title %></span></h2>
+      </div>
+    </div>
+    <div class="row" style="color: white; margin-top: 50px;">
+      <div class="col-md-10 mx-auto">
+        <% t.faq.questions.forEach(function(item) { %>
+          <h4 style="color: #E4B756"><%= item.q %></h4>
+          <p class="text-muted" style="margin-bottom: 30px;"><%= item.a %></p>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase"><span class=""><%= t.galleryTitle %></span></h2>
+      </div>
+    </div>
+    <div class="row" style="color: #6c757d">
+      <% for(var i=0; i<6; i++) { %>
+      <div class="col-md-4 col-sm-6 portfolio-item">
+        <a class="portfolio-link" data-img="<%= i %>" aria-label="Gallery <%= i %>" role="button">
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fa fa-plus fa-3x"></i>
+            </div>
+          </div>
+          <div class="img-container"></div>
+        </a>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<section id="map">
+</section>
+
+<div class="imgModal">
+  <div class="whiteBg">
+    <div class="closeIcon" style="background-image:url(<%= baseDir %>img/icons/close.png)" role="button" tabindex="0"></div>
+    <div class="imgConent">
+        <div class="leftArrow" style="background-image:url(<%= baseDir %>img/icons/left-arrow.png)" role="button" tabindex="0"></div>
+        <div class="webImg"></div>
+        <div class="rightArrow" style="background-image:url(<%= baseDir %>img/icons/right-arrow.png)" role="button" tabindex="0"></div>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>
+<%- include('../partials/scripts') %>
+
+</body>
+</html>

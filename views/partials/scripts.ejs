@@ -1,0 +1,165 @@
+<!-- Bootstrap core JavaScript -->
+<script src="<%= baseDir %>vendor/jquery/jquery.min.js"></script>
+<script src="<%= baseDir %>vendor/jquery/jquery-ui.min.js"></script>
+<% if(lang === 'est') { %><script src="<%= baseDir %>vendor/jquery/datepicker-et.js"></script><% } %>
+<% if(lang === 'ru') { %><script src="<%= baseDir %>vendor/jquery/datepicker-ru.js"></script><% } %>
+<!-- EN usually uses default so we don't necessarily load a specific one for EN here, or rely on defaults -->
+
+<script src="<%= baseDir %>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="<%= baseDir %>vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Contact form JavaScript -->
+<script src="<%= baseDir %>js/jqBootstrapValidation.js"></script>
+<script src="<%= baseDir %>js/contact_me.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="<%= baseDir %>js/agency.js"></script>
+
+<!-- Script -->
+<script type='text/javascript' >
+  window.selectedDate = null;
+  window.selectedTime = null;
+  function selectTime() {
+    window.selectedTime = $('#time').val();
+    if (window.selectedDate && window.selectedTime) {
+      $('#clientDetails').html(`
+      <form action="https://roccajuuksur.ee/api/time/book">
+        <label for="email">Email:</label><br>
+        <input type="email" name="email" id="email"/><br>
+        <label for="phone"><%= lang === 'est' ? 'Tel. number' : (lang === 'ru' ? 'Номер телефона' : 'Phone number') %>:</label><br>
+        <span class="numberPrefix">+372</span> <input required type="text" name="phone" id="phone" pattern="^\\d{5,}$"/><br>
+        <input type="hidden" value="<%= t.langCode %>" name="lang" id="lang">
+        <input type="hidden" value="${window.selectedDate}" name="date" id="date">
+        <input type="hidden" value="${window.selectedTime}" name="time" id="time">
+        <input class="btn btn-primary" style="margin-top: 7px;" type="submit" value="<%= t.book.btn %>">
+      </form>
+    `);
+    } else {
+      $('#clientDetails').html('');
+    }
+  }
+  $( function() {
+    $.get( "https://roccajuuksur.ee/api/dates", function( allowedDates ) {
+      $('#datepicker').datepicker({
+        dateFormat: "yy-mm-dd",
+        beforeShowDay: function(date){
+            var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+            return [ allowedDates.includes(string) ];
+        },
+        onSelect: function (date, datepicker) {
+          $.get( \`https://roccajuuksur.ee/api/time/\${date}\`, function( times ) {
+            if (times && times.length) {
+              window.selectedDate = date;
+              $('#timeSelection').html(`
+                <label for="time"><%= lang === 'est' ? 'Vali sobiv aeg' : (lang === 'ru' ? 'Выберите подходящее время' : 'Select suitable time') %></label><br>
+                <select name="time" id="time" onchange="selectTime()">
+                  <option value=""></option>
+                  \${times.map(time => `<option value="\${time.time}">\${time.time}</option>\n`).join('')}
+                </select>
+              `)
+            } else {
+              $('#timeSelection').html("");
+            }
+          });
+        },
+      });
+    });
+  });
+</script>
+<script>
+  var portfolioImgs = {
+    web: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg'],
+    thumb: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg'],
+  };
+  //set portfolio images
+  var imagesArr = $('.img-container');
+  for(var i = 0; i < imagesArr.length; i++) {
+    imagesArr.eq(i).css("background-image", "url(<%= baseDir %>img/portfolio/" + portfolioImgs.thumb[i] + ")")
+  }
+
+  //setup gallery
+  var curImg = 0;
+  function changePic(direction) {
+    switch(direction){
+      case 'next':
+        curImg++;
+        break;
+      case 'prev':
+        curImg--;
+        break;
+    }
+    curImg = curImg >= portfolioImgs.web.length ? 0 : curImg;
+    curImg = curImg < 0 ? portfolioImgs.web.length - 1 : curImg;
+    $('.webImg').css("background-image", "url(<%= baseDir %>img/portfolio/" + portfolioImgs.web[curImg] + ")")
+  }
+  $('.closeIcon').click(function() {
+    $('.imgModal').hide();
+  });
+  $('.rightArrow').click(function() {
+    changePic('next');
+  });
+  $('.leftArrow').click(function() {
+    changePic('prev');
+  });
+  $('.portfolio-link').click(function() {
+    var imgNr = parseInt($(this).attr('data-img'));
+    $('.webImg').css("background-image", "url(<%= baseDir %>img/portfolio/" + portfolioImgs.web[imgNr] + ")");
+    curImg = imgNr;
+    $('.imgModal').show();
+  });
+  var marker;
+  var marker2;
+  var infowindow;
+  
+  function updateMap() {
+    if (infowindow) {
+      infowindow.close();
+    }
+    infowindow = new google.maps.InfoWindow({
+      content: "<%= t.mapString.replace(/{baseDir}/g, baseDir) %>",
+    });
+    infowindow.open(map, marker2);
+  }
+  function initMap() {
+    var center = { lat: 59.421562, lng: 24.647764 };
+    window.map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 14,
+      center: center,
+      mapTypeId: 'terrain',
+      disableDefaultUI: true,
+      styles: [
+        {
+          featureType: 'poi.business',
+          stylers: [{ visibility: 'off' }]
+        }
+      ]
+    });
+    marker = new google.maps.Marker({
+      position: center,
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 5,
+        strokeColor: "#ff0000",
+        strokeWeight: 10
+      },
+      map: window.map
+    });
+    marker2 = new google.maps.Marker({
+      position: center,
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 17,
+        strokeColor: "#ff0000",
+        strokeWeight: 4
+      },
+      map: window.map
+    });
+    updateMap();
+    marker2.addListener('click', function () {
+      infowindow.open(window.map, marker2);
+    });
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgsC14xVA6LGOWB1MOyudiM0lGDoNfJ6M&callback=initMap"></script>

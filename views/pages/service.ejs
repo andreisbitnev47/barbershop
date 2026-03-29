@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="<%= t.langCode %>">
+
+<head>
+<%- include('../partials/head') %>
+<meta name="robots" content="index, follow">
+<title><%= service.title %></title>
+</head>
+
+<body id="page-top">
+<%- include('../partials/nav') %>
+
+<header class="masthead" style="height: 60vh; min-height: 400px; padding-top: 150px;">
+  <div class="container">
+    <div class="intro-text" style="padding-top: 50px;">
+      <h1 class="intro-lead-in"><span class=""><%= service.title %></span></h1>
+      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/<%= t.dirPrefix %>#book">
+        <span class=""><%= t.header.btn %></span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<section id="service-details" style="background-color: black; padding: 100px 0;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase"><span class=""><%= service.serviceTitle %></span></h2>
+      </div>
+    </div>
+    <div class="row mt-5" style="color: white; font-size: 1.2rem; line-height: 1.8;">
+      <div class="col-md-8 mx-auto text-center text-muted">
+        <p><%= service.article %></p>
+        <br>
+        <p><%= t.hours.locationDesc %></p>
+        <br>
+        <a class="btn btn-outline-warning btn-xl text-uppercase" href="/<%= t.dirPrefix %>#services">
+          <span class="">&larr; <%= t.nav.pricing %></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Include map directly here so it isn't lost -->
+<section id="map">
+</section>
+
+<%- include('../partials/footer') %>
+<%- include('../partials/scripts') %>
+
+</body>
+</html>

@@ -28,4 +28,58 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://roccajuuksur.ee/ru/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://roccajuuksur.ee/en/" />
   </url>
+  <url>
+    <loc>https://roccajuuksur.ee/habeme-piiramine-tallinnas.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="et" href="https://roccajuuksur.ee/habeme-piiramine-tallinnas.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://roccajuuksur.ee/ru/strizhka-borodi-tallinn.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://roccajuuksur.ee/en/beard-trimming-tallinn.html" />
+  </url>
+  <url>
+    <loc>https://roccajuuksur.ee/ru/strizhka-borodi-tallinn.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="et" href="https://roccajuuksur.ee/habeme-piiramine-tallinnas.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://roccajuuksur.ee/ru/strizhka-borodi-tallinn.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://roccajuuksur.ee/en/beard-trimming-tallinn.html" />
+  </url>
+  <url>
+    <loc>https://roccajuuksur.ee/en/beard-trimming-tallinn.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="et" href="https://roccajuuksur.ee/habeme-piiramine-tallinnas.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://roccajuuksur.ee/ru/strizhka-borodi-tallinn.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://roccajuuksur.ee/en/beard-trimming-tallinn.html" />
+  </url>
+  <url>
+    <loc>https://roccajuuksur.ee/meeste-juukseloikus-ja-fade.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="et" href="https://roccajuuksur.ee/meeste-juukseloikus-ja-fade.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://roccajuuksur.ee/ru/muzhskaja-strizhka-fade.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://roccajuuksur.ee/en/mens-haircut-fade-tallinn.html" />
+  </url>
+  <url>
+    <loc>https://roccajuuksur.ee/ru/muzhskaja-strizhka-fade.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="et" href="https://roccajuuksur.ee/meeste-juukseloikus-ja-fade.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://roccajuuksur.ee/ru/muzhskaja-strizhka-fade.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://roccajuuksur.ee/en/mens-haircut-fade-tallinn.html" />
+  </url>
+  <url>
+    <loc>https://roccajuuksur.ee/en/mens-haircut-fade-tallinn.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="et" href="https://roccajuuksur.ee/meeste-juukseloikus-ja-fade.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://roccajuuksur.ee/ru/muzhskaja-strizhka-fade.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://roccajuuksur.ee/en/mens-haircut-fade-tallinn.html" />
+  </url>
 </urlset>
