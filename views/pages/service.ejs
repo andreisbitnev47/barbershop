@@ -46,6 +46,13 @@
 <section id="map">
 </section>
 
+<!-- Map Image Modal -->
+<div id="mapImageModal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); cursor: pointer;">
+  <span id="closeMapModal" style="position: absolute; top: 15px; right: 35px; color: white; font-size: 40px; cursor: pointer; z-index: 10001;">&times;</span>
+  <img id="mapModalImage" style="margin: auto; display: block; max-width: 90%; max-height: 90%; margin-top: 5%; cursor: default;">
+  <div id="mapModalCaption" style="text-align: center; color: white; padding: 10px; font-size: 16px;"></div>
+</div>
+
 <%- include('../partials/footer') %>
 <%- include('../partials/scripts') %>
 
