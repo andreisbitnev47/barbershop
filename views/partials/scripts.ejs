@@ -120,6 +120,19 @@
     infowindow = new google.maps.InfoWindow({
       content: "<%- t.mapString.replace(/{baseDir}/g, baseDir) %>",
     });
+    
+    // Add event listener for when InfoWindow content is loaded
+    google.maps.event.addListener(infowindow, 'domready', function() {
+      // Find all images in the InfoWindow and add click handlers
+      var infoWindowImages = document.querySelectorAll('.gm-style-iw img');
+      infoWindowImages.forEach(function(img) {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', function() {
+          openMapImageModal(this.src, this.alt);
+        });
+      });
+    });
+    
     infowindow.open(map, marker2);
   }
   function initMap() {

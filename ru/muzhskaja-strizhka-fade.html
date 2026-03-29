@@ -436,8 +436,21 @@
       infowindow.close();
     }
     infowindow = new google.maps.InfoWindow({
-      content: "<div style='color: black'><h6>Мы находимся в Rocca Tower 1</h6><p>Первый этаж, отдельный вход со двора</p><p>Адрес: Päevalille tn 4</p><img src='../img/portfolio/building.jpg' style='height: 71px;' alt='Здание Rocca Tower 1 в Таллинне'><img src='../img/portfolio/entrance.jpg' style='height: 71px; margin-left: 10px;' alt='Вход в барбершоп Rocca juuksur в Таллинне'></div>",
+      content: "<div style='color: black'><h6>Мы находимся в Rocca Tower 1</h6><p>Первый этаж, отдельный вход со двора</p><p>Адрес: Päevalille tn 4</p><img src='../img/portfolio/building.jpg' style='height: 71px; cursor: pointer;' alt='Здание Rocca Tower 1 в Таллинне' onclick='openMapImageModal(this.src, this.alt)'><img src='../img/portfolio/entrance.jpg' style='height: 71px; margin-left: 10px; cursor: pointer;' alt='Вход в барбершоп Rocca juuksur в Таллинне' onclick='openMapImageModal(this.src, this.alt)'></div>",
     });
+    
+    // Add event listener for when InfoWindow content is loaded
+    google.maps.event.addListener(infowindow, 'domready', function() {
+      // Find all images in the InfoWindow and add click handlers
+      var infoWindowImages = document.querySelectorAll('.gm-style-iw img');
+      infoWindowImages.forEach(function(img) {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', function() {
+          openMapImageModal(this.src, this.alt);
+        });
+      });
+    });
+    
     infowindow.open(map, marker2);
   }
   function initMap() {
@@ -479,6 +492,52 @@
       infowindow.open(window.map, marker2);
     });
   }
+
+  // Map Image Modal Functions
+  function openMapImageModal(src, alt) {
+    document.getElementById('mapImageModal').style.display = 'block';
+    document.getElementById('mapModalImage').src = src;
+    document.getElementById('mapModalCaption').textContent = alt;
+  }
+
+  // Close modal when clicking the X
+  document.addEventListener('DOMContentLoaded', function() {
+    var closeBtn = document.getElementById('closeMapModal');
+    var modal = document.getElementById('mapImageModal');
+    var modalImg = document.getElementById('mapModalImage');
+    
+    if (closeBtn) {
+      closeBtn.onclick = function() {
+        modal.style.display = 'none';
+      }
+    }
+    
+    // Close modal when clicking outside the image
+    if (modal) {
+      modal.onclick = function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      }
+    }
+    
+    // Prevent modal from closing when clicking on the image itself
+    if (modalImg) {
+      modalImg.onclick = function(e) {
+        e.stopPropagation();
+      }
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.style.display === 'block') {
+        modal.style.display = 'none';
+      }
+    });
+  });
+
+  // Make the function globally available
+  window.openMapImageModal = openMapImageModal;
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgsC14xVA6LGOWB1MOyudiM0lGDoNfJ6M&callback=initMap"></script>
 
