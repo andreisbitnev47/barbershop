@@ -301,14 +301,14 @@
             return [ allowedDates.includes(string) ];
         },
         onSelect: function (date, datepicker) {
-          $.get( \`https://roccajuuksur.ee/api/time/\${date}\`, function( times ) {
+          $.get( `https://roccajuuksur.ee/api/time/${date}`, function( times ) {
             if (times && times.length) {
               window.selectedDate = date;
               $('#timeSelection').html(`
                 <label for="time">Vali sobiv aeg</label><br>
                 <select name="time" id="time" onchange="selectTime()">
                   <option value=""></option>
-                  \${times.map(time => `<option value="\${time.time}">\${time.time}</option>\n`).join('')}
+                  ${times.map(time => `<option value="${time.time}">${time.time}</option>\n`).join('')}
                 </select>
               `)
             } else {
@@ -370,7 +370,7 @@
       infowindow.close();
     }
     infowindow = new google.maps.InfoWindow({
-      content: "&lt;div style=&#39;color: black&#39;&gt;&lt;h6&gt;Asume Rocca Tower 1 majas&lt;/h6&gt;&lt;p&gt;Esimene korrus, eraldi sissepääs õuest&lt;/p&gt;&lt;p&gt;Aadress: Päevalille tn 4&lt;/p&gt;&lt;img src=&#39;img/portfolio/building.jpg&#39; style=&#39;height: 71px;&#39; alt=&#39;Rocca Tower 1 hoone Tallinnas&#39;&gt;&lt;img src=&#39;img/portfolio/entrance.jpg&#39; style=&#39;height: 71px; margin-left: 10px;&#39; alt=&#39;Rocca juuksur barbershop sissepääs Tallinnas Rocca al Mares&#39;&gt;&lt;/div&gt;",
+      content: "<div style='color: black'><h6>Asume Rocca Tower 1 majas</h6><p>Esimene korrus, eraldi sissepääs õuest</p><p>Aadress: Päevalille tn 4</p><img src='img/portfolio/building.jpg' style='height: 71px;' alt='Rocca Tower 1 hoone Tallinnas'><img src='img/portfolio/entrance.jpg' style='height: 71px; margin-left: 10px;' alt='Rocca juuksur barbershop sissepääs Tallinnas Rocca al Mares'></div>",
     });
     infowindow.open(map, marker2);
   }

@@ -49,14 +49,14 @@
             return [ allowedDates.includes(string) ];
         },
         onSelect: function (date, datepicker) {
-          $.get( \`https://roccajuuksur.ee/api/time/\${date}\`, function( times ) {
+          $.get( `https://roccajuuksur.ee/api/time/${date}`, function( times ) {
             if (times && times.length) {
               window.selectedDate = date;
               $('#timeSelection').html(`
                 <label for="time"><%= lang === 'est' ? 'Vali sobiv aeg' : (lang === 'ru' ? 'Выберите подходящее время' : 'Select suitable time') %></label><br>
                 <select name="time" id="time" onchange="selectTime()">
                   <option value=""></option>
-                  \${times.map(time => `<option value="\${time.time}">\${time.time}</option>\n`).join('')}
+                  ${times.map(time => `<option value="${time.time}">${time.time}</option>\n`).join('')}
                 </select>
               `)
             } else {
@@ -118,7 +118,7 @@
       infowindow.close();
     }
     infowindow = new google.maps.InfoWindow({
-      content: "<%= t.mapString.replace(/{baseDir}/g, baseDir) %>",
+      content: "<%- t.mapString.replace(/{baseDir}/g, baseDir) %>",
     });
     infowindow.open(map, marker2);
   }
