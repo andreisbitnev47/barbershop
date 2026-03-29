@@ -89,6 +89,11 @@
   "@id": "https://roccajuuksur.ee",
   "url": "https://roccajuuksur.ee",
   "telephone": "+372 55529783",
+  "priceRange": "$$",
+  "sameAs": [
+    "https://www.facebook.com/nella.sbitneva",
+    "http://astangu-juuksur.business.site/"
+  ],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Päevalille tn 4",
@@ -109,7 +114,40 @@
       "opens": "10:00",
       "closes": "16:00"
     }
-  ]
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Juuksuriteenused",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Masin lõikus"
+        },
+        "price": "25.00",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Kääridega lõikus"
+        },
+        "price": "28.00",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Habeme kujundamine"
+        },
+        "price": "18.00",
+        "priceCurrency": "EUR"
+      }
+    ]
+  }
 }
 </script>
 
@@ -189,7 +227,7 @@
           </div>
           <div class="col-sm-6">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/portfolio/barber4.gif" alt="Meeste juuksur ja barbershop omanik Tallinnas Nella Sbitneva">
+              <img class="mx-auto rounded-circle" src="img/portfolio/barber4.gif" alt="Meeste juuksur ja barbershop omanik Tallinnas Nella Sbitneva" loading="lazy">
               <h4><span class="">Nella Sbitneva</span></h4>
               <p class="text-muted"><span class="">Meeste juuksur / omanik</span></p>
               <p class="large text-muted"><span class="">Üle kümne aastase kogemusega laia profiiliga juuksur.</span></p>
@@ -306,6 +344,29 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section id="faq" style="background-color: black;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase"><span class="">Korduma kippuvad küsimused</span></h2>
+        </div>
+      </div>
+      <div class="row" style="color: white; margin-top: 50px;">
+        <div class="col-md-10 mx-auto">
+          <h4 style="color: #E4B756">Kas pean aja ette broneerima?</h4>
+          <p class="text-muted" style="margin-bottom: 30px;">Soovitame aja ette broneerida meie kodulehe kaudu, et garanteerida teile sobiv aeg.</p>
+          
+          <h4 style="color: #E4B756">Milliseid makseviise aktsepteerite?</h4>
+          <p class="text-muted" style="margin-bottom: 30px;">Aksepteerime sularaha ja pangaülekandeid.</p>
+          
+          <h4 style="color: #E4B756">Kui tihti peaks habet piirama?</h4>
+          <p class="text-muted" style="margin-bottom: 30px;">Sõltuvalt habeme kasvamise kiirusest soovitame habet piirata iga 2-4 nädala tagant, et säilitada puhas ja hoolitsetud välimus.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Portfolio Grid -->
   <section id="portfolio">
     <div class="container">
@@ -316,7 +377,7 @@
       </div>
       <div class="row" style="color: #6c757d">
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-img="0">
+          <a class="portfolio-link" data-img="0" aria-label="Vaata galeriipilti 1" role="button">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fa fa-plus fa-3x"></i>
@@ -326,7 +387,7 @@
           </a>
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-img="1">
+          <a class="portfolio-link" data-img="1" aria-label="Vaata galeriipilti 2" role="button">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fa fa-plus fa-3x"></i>
@@ -336,7 +397,7 @@
           </a>
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-img="2">
+          <a class="portfolio-link" data-img="2" aria-label="Vaata galeriipilti 3" role="button">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fa fa-plus fa-3x"></i>
@@ -346,7 +407,7 @@
           </a>
           </div>
           <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-img="3">
+          <a class="portfolio-link" data-img="3" aria-label="Vaata galeriipilti 4" role="button">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fa fa-plus fa-3x"></i>
@@ -356,7 +417,7 @@
           </a>
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-img="4">
+          <a class="portfolio-link" data-img="4" aria-label="Vaata galeriipilti 5" role="button">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fa fa-plus fa-3x"></i>
@@ -366,7 +427,7 @@
           </a>
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-img="5">
+          <a class="portfolio-link" data-img="5" aria-label="Vaata galeriipilti 6" role="button">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fa fa-plus fa-3x"></i>
@@ -391,11 +452,11 @@
 
   <div class="imgModal">
     <div class="whiteBg">
-      <div class="closeIcon" style="background-image:url(img/icons/close.png)"></div>
+      <div class="closeIcon" style="background-image:url(img/icons/close.png)" aria-label="Sulge galerii" role="button" tabindex="0"></div>
       <div class="imgConent">
-          <div class="leftArrow" style="background-image:url(img/icons/left-arrow.png)"></div>
+          <div class="leftArrow" style="background-image:url(img/icons/left-arrow.png)" aria-label="Eelmine pilt" role="button" tabindex="0"></div>
           <div class="webImg"></div>
-          <div class="rightArrow" style="background-image:url(img/icons/right-arrow.png)"></div>
+          <div class="rightArrow" style="background-image:url(img/icons/right-arrow.png)" aria-label="Järgmine pilt" role="button" tabindex="0"></div>
       </div>
     </div>
   </div>

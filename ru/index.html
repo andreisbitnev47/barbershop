@@ -91,6 +91,11 @@
   "@id": "https://roccajuuksur.ee/ru",
   "url": "https://roccajuuksur.ee/ru",
   "telephone": "+372 55529783",
+  "priceRange": "$$",
+  "sameAs": [
+    "https://www.facebook.com/nella.sbitneva",
+    "http://astangu-juuksur.business.site/"
+  ],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Päevalille tn 4",
@@ -112,7 +117,40 @@
       "closes": "16:00"
     }
   ],
-  "description": "Качественный мужской парикмахер и барбершоп в Таллинне, Рокка-аль-Маре. Предлагаем стрижки, оформление бороды и мытье головы. Забронируйте время онлайн!"
+  "description": "Качественный мужской парикмахер и барбершоп в Таллинне, Рокка-аль-Маре. Предлагаем стрижки, оформление бороды и мытье головы. Забронируйте время онлайн!",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Парикмахерские услуги",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Под машинку"
+        },
+        "price": "25.00",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Стрижка ножницами"
+        },
+        "price": "28.00",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Формирование бороды"
+        },
+        "price": "18.00",
+        "priceCurrency": "EUR"
+      }
+    ]
+  }
 }
 </script>
 
@@ -194,7 +232,7 @@
           </div>
           <div class="col-sm-6">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="../img/portfolio/barber4.gif" alt="Мужской парикмахер / владелец барбершопа Нелла Сбитнева в Таллинне">
+              <img class="mx-auto rounded-circle" src="../img/portfolio/barber4.gif" alt="Мужской парикмахер / владелец барбершопа Нелла Сбитнева в Таллинне" loading="lazy">
               <h4><span class="">Нелла Сбитнева</span></h4>
               <p class="text-muted"><span class="">Мужской парикмахер / владелец</span></p>
               <p class="large text-muted"><span class="">Парикмахер широкого профиля с опытом работы более 10 лет.</span></p>
@@ -312,6 +350,29 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section id="faq" style="background-color: black;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase"><span class="">Часто задаваемые вопросы</span></h2>
+        </div>
+      </div>
+      <div class="row" style="color: white; margin-top: 50px;">
+        <div class="col-md-10 mx-auto">
+          <h4 style="color: #E4B756">Нужно ли бронировать время заранее?</h4>
+          <p class="text-muted" style="margin-bottom: 30px;">Мы рекомендуем бронировать время заранее через наш сайт, чтобы гарантировать вам подходящее время.</p>
+          
+          <h4 style="color: #E4B756">Какие способы оплаты вы принимаете?</h4>
+          <p class="text-muted" style="margin-bottom: 30px;">Мы принимаем наличные и банковские переводы.</p>
+          
+          <h4 style="color: #E4B756">Как часто нужно стричь бороду?</h4>
+          <p class="text-muted" style="margin-bottom: 30px;">В зависимости от скорости роста бороды мы рекомендуем стричь ее каждые 2-4 недели, чтобы сохранить аккуратный и ухоженный вид.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Portfolio Grid -->
   <section id="portfolio">
     <div class="container">
@@ -322,7 +383,7 @@
       </div>
       <div class="row" style="color: #6c757d">
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-img="0">
+          <a class="portfolio-link" data-img="0" aria-label="Посмотреть фото галереи 1" role="button">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fa fa-plus fa-3x"></i>
@@ -332,7 +393,7 @@
           </a>
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-img="1">
+          <a class="portfolio-link" data-img="1" aria-label="Посмотреть фото галереи 2" role="button">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fa fa-plus fa-3x"></i>
@@ -342,7 +403,7 @@
           </a>
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-img="2">
+          <a class="portfolio-link" data-img="2" aria-label="Посмотреть фото галереи 3" role="button">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fa fa-plus fa-3x"></i>
@@ -352,7 +413,7 @@
           </a>
           </div>
           <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-img="3">
+          <a class="portfolio-link" data-img="3" aria-label="Посмотреть фото галереи 4" role="button">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fa fa-plus fa-3x"></i>
@@ -362,7 +423,7 @@
           </a>
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-img="4">
+          <a class="portfolio-link" data-img="4" aria-label="Посмотреть фото галереи 5" role="button">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fa fa-plus fa-3x"></i>
@@ -372,7 +433,7 @@
           </a>
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-img="5">
+          <a class="portfolio-link" data-img="5" aria-label="Посмотреть фото галереи 6" role="button">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fa fa-plus fa-3x"></i>
@@ -397,11 +458,11 @@
 
   <div class="imgModal">
     <div class="whiteBg">
-      <div class="closeIcon" style="background-image:url(../img/icons/close.png)"></div>
+      <div class="closeIcon" style="background-image:url(../img/icons/close.png)" aria-label="Закрыть галерею" role="button" tabindex="0"></div>
       <div class="imgConent">
-          <div class="leftArrow" style="background-image:url(../img/icons/left-arrow.png)"></div>
+          <div class="leftArrow" style="background-image:url(../img/icons/left-arrow.png)" aria-label="Предыдущее фото" role="button" tabindex="0"></div>
           <div class="webImg"></div>
-          <div class="rightArrow" style="background-image:url(../img/icons/right-arrow.png)"></div>
+          <div class="rightArrow" style="background-image:url(../img/icons/right-arrow.png)" aria-label="Следующее фото" role="button" tabindex="0"></div>
       </div>
     </div>
   </div>
