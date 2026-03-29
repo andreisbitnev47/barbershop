@@ -104,7 +104,7 @@ const translations = {
     },
     galleryTitle: "Fotogalerii",
     mapString:
-      "<div style='color: black'><h6>Asume Rocca Tower 1 majas</h6><p>Esimene korrus, eraldi sissepääs õuest</p><p>Aadress: Päevalille tn 4</p><img src='{baseDir}img/portfolio/building.jpg' style='height: 71px;' alt='Rocca Tower 1 hoone Tallinnas'><img src='{baseDir}img/portfolio/entrance.jpg' style='height: 71px; margin-left: 10px;' alt='Rocca juuksur barbershop sissepääs Tallinnas Rocca al Mares'></div>",
+      "<div style='color: black'><h6>Asume Rocca Tower 1 majas</h6><p>Esimene korrus, eraldi sissepääs õuest</p><p>Aadress: Päevalille tn 4</p><img src='{baseDir}img/portfolio/building.jpg' style='height: 71px; cursor: pointer;' alt='Rocca Tower 1 hoone Tallinnas' onclick='openMapImageModal(this.src, this.alt)'><img src='{baseDir}img/portfolio/entrance.jpg' style='height: 71px; margin-left: 10px; cursor: pointer;' alt='Rocca juuksur barbershop sissepääs Tallinnas Rocca al Mares' onclick='openMapImageModal(this.src, this.alt)'></div>",
     links: {
       beard: "habeme-piiramine-tallinnas.html",
       scissor: "meeste-juukseloikus-ja-fade.html",
@@ -215,7 +215,7 @@ const translations = {
     },
     galleryTitle: "Фотогалерея",
     mapString:
-      "<div style='color: black'><h6>Мы находимся в Rocca Tower 1</h6><p>Первый этаж, отдельный вход со двора</p><p>Адрес: Päevalille tn 4</p><img src='{baseDir}img/portfolio/building.jpg' style='height: 71px;' alt='Здание Rocca Tower 1 в Таллинне'><img src='{baseDir}img/portfolio/entrance.jpg' style='height: 71px; margin-left: 10px;' alt='Вход в барбершоп Rocca juuksur в Таллинне'></div>",
+      "<div style='color: black'><h6>Мы находимся в Rocca Tower 1</h6><p>Первый этаж, отдельный вход со двора</p><p>Адрес: Päevalille tn 4</p><img src='{baseDir}img/portfolio/building.jpg' style='height: 71px; cursor: pointer;' alt='Здание Rocca Tower 1 в Таллинне' onclick='openMapImageModal(this.src, this.alt)'><img src='{baseDir}img/portfolio/entrance.jpg' style='height: 71px; margin-left: 10px; cursor: pointer;' alt='Вход в барбершоп Rocca juuksur в Таллинне' onclick='openMapImageModal(this.src, this.alt)'></div>",
     links: {
       beard: "strizhka-borodi-tallinn.html",
       scissor: "muzhskaja-strizhka-fade.html",
@@ -326,7 +326,7 @@ const translations = {
     },
     galleryTitle: "Gallery",
     mapString:
-      "<div style='color: black'><h6>We are located at Rocca Tower 1</h6><p>First floor, separate entrance from courtyard</p><p>Address: Päevalille tn 4</p><img src='{baseDir}img/portfolio/building.jpg' style='height: 71px;' alt='Rocca Tower 1 building in Tallinn'><img src='{baseDir}img/portfolio/entrance.jpg' style='height: 71px; margin-left: 10px;' alt='Rocca juuksur barbershop entrance in Tallinn'></div>",
+      "<div style='color: black'><h6>We are located at Rocca Tower 1</h6><p>First floor, separate entrance from courtyard</p><p>Address: Päevalille tn 4</p><img src='{baseDir}img/portfolio/building.jpg' style='height: 71px; cursor: pointer;' alt='Rocca Tower 1 building in Tallinn' onclick='openMapImageModal(this.src, this.alt)'><img src='{baseDir}img/portfolio/entrance.jpg' style='height: 71px; margin-left: 10px; cursor: pointer;' alt='Rocca juuksur barbershop entrance in Tallinn' onclick='openMapImageModal(this.src, this.alt)'></div>",
     links: {
       beard: "beard-trimming-tallinn.html",
       scissor: "mens-haircut-fade-tallinn.html",

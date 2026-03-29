@@ -852,3 +852,57 @@ ul.social-buttons li a:hover {
   margin: 20px 10px calc(4vh + 15px) 10px;
   border-radius: 10px
 }
+
+/* Map Image Modal Styles */
+#mapImageModal {
+  transition: opacity 0.3s ease;
+}
+
+#mapImageModal:hover {
+  opacity: 1;
+}
+
+#closeMapModal {
+  transition: opacity 0.3s ease;
+  user-select: none;
+}
+
+#closeMapModal:hover {
+  opacity: 0.7;
+}
+
+#mapModalImage {
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+#mapModalImage:hover {
+  transform: scale(1.02);
+}
+
+#mapModalCaption {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  #closeMapModal {
+    font-size: 30px;
+    top: 10px;
+    right: 15px;
+  }
+  
+  #mapModalImage {
+    max-width: 95%;
+    margin-top: 10%;
+  }
+  
+  #mapModalCaption {
+    font-size: 14px;
+    padding: 5px;
+  }
+}
