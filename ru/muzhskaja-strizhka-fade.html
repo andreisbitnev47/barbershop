@@ -436,22 +436,19 @@
       infowindow.close();
     }
     infowindow = new google.maps.InfoWindow({
-      content: "<div style='color: black'><h6>Мы находимся в Rocca Tower 1</h6><p>Первый этаж, отдельный вход со двора</p><p>Адрес: Päevalille tn 4</p><img src='../img/portfolio/building.jpg' style='height: 71px; cursor: pointer;' alt='Здание Rocca Tower 1 в Таллинне' onclick='openMapImageModal(this.src, this.alt)'><img src='../img/portfolio/entrance.jpg' style='height: 71px; margin-left: 10px; cursor: pointer;' alt='Вход в барбершоп Rocca juuksur в Таллинне' onclick='openMapImageModal(this.src, this.alt)'></div>",
+      content: "<div style='color: black'><h6>Мы находимся в Rocca Tower 1</h6><p>Первый этаж, отдельный вход со двора</p><p>Адрес: Päevalille tn 4</p><img src='../img/portfolio/building.jpg' style='height: 71px; cursor: pointer;' alt='Здание Rocca Tower 1 в Таллинне' class='map-clickable-image'><img src='../img/portfolio/entrance.jpg' style='height: 71px; margin-left: 10px; cursor: pointer;' alt='Вход в барбершоп Rocca juuksur в Таллинне' class='map-clickable-image'></div>",
     });
+    infowindow.open(map, marker2);
     
-    // Add event listener for when InfoWindow content is loaded
-    google.maps.event.addListener(infowindow, 'domready', function() {
-      // Find all images in the InfoWindow and add click handlers
-      var infoWindowImages = document.querySelectorAll('.gm-style-iw img');
-      infoWindowImages.forEach(function(img) {
-        img.style.cursor = 'pointer';
+    // Add event listeners to clickable images after InfoWindow is opened
+    google.maps.event.addListenerOnce(infowindow, 'domready', function() {
+      var clickableImages = document.querySelectorAll('.map-clickable-image');
+      clickableImages.forEach(function(img) {
         img.addEventListener('click', function() {
           openMapImageModal(this.src, this.alt);
         });
       });
     });
-    
-    infowindow.open(map, marker2);
   }
   function initMap() {
     var center = { lat: 59.421562, lng: 24.647764 };
